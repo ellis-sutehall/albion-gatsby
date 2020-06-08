@@ -1,0 +1,32 @@
+.hero {
+  .hero-body {
+    @include mobile {
+      padding-top: $size-6;
+    }
+    .hero-logo {
+      max-width: 534px;
+      margin: 0 auto $size-4 auto;
+      @include from($tablet) {
+        margin-bottom: $size-1;
+      }
+    }
+    .intro {
+      background-color: $secondary-alpha;
+      margin-bottom: $size-4;
+      padding: $size-4 $size-6;
+
+      @include from($tablet) {
+        margin-bottom: $size-1;
+      }
+
+      @include from($desktop) {
+        padding: $size-1;
+      }
+
+      .title {
+        color: white;
+        font-weight: normal;
+      }
+    }
+  }
+}

@@ -1,35 +1,88 @@
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import BackgroundImage from "gatsby-background-image"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+const Header = ({ siteTitle }) => {
+  const data = useStaticQuery(graphql`
+    query {
+      LogoMob: imageSharp(id: { eq: "ea72edc3-f5bf-5488-894d-64f2048d4b8e" }) {
+        fixed(width: 35) {
+          ...GatsbyImageSharpFixed
+        }
+        id
+      }
+      imageSharp(id: { eq: "e9e4722e-43b0-5e26-a7f6-f54d983123eb" }) {
+        fixed(width: 150) {
+          ...GatsbyImageSharpFixed
+        }
+        id
+      }
+    }
+  `)
+
+  const handleOnClick = () => {
+    document.body.classList.toggle("menu-is-open")
+    document.querySelector(".navbar-burger").classList.toggle("is-active")
+  }
+
+  const closeMenu = () => {
+    if (document.body.classList.contains("menu-is-open")) {
+      document.body.classList.remove("menu-is-open")
+    }
+  }
+
+  return (
+    <header>
+      <div className="container">
+        <nav className="navbar">
+          <div className="navbar-brand">
+            <div className="navbar-item">
+              <BackgroundImage
+                className="logo-desktop"
+                fixed={data.imageSharp.fixed}
+              >
+                <Link to="/">{siteTitle}</Link>
+              </BackgroundImage>
+              <BackgroundImage className="logo" fixed={data.LogoMob.fixed}>
+                <Link to="/">{siteTitle}</Link>
+              </BackgroundImage>
+            </div>
+            <button
+              className="navbar-burger burger"
+              aria-label="menu"
+              aria-expanded="false"
+              onClick={handleOnClick}
+            >
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </button>
+          </div>
+
+          <div className="navbar-menu">
+            <div className="navbar-end">
+              <div className="navbar-item">
+                <Link className="navbar-link is-arrowless" onClick={closeMenu}>
+                  Home
+                </Link>
+                <Link className="navbar-link is-arrowless" onClick={closeMenu}>
+                  About
+                </Link>
+                <Link className="navbar-link is-arrowless" onClick={closeMenu}>
+                  Gallery
+                </Link>
+                <Link className="navbar-link is-arrowless" onClick={closeMenu}>
+                  Contact
+                </Link>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+  )
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,

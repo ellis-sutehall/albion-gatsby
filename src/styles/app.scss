@@ -1,0 +1,22 @@
+@charset 'utf-8';
+
+@import "./variables";
+@import "~bulma/bulma.sass";
+@import "./header";
+@import "./hero";
+@import "./home";
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  transition: transform 0.3s ease-in;
+  flex-grow: 1;
+}
