@@ -1,5 +1,9 @@
 header {
+  position: fixed;
+  top: 0;
+  width: 100%;
   background-color: $primary;
+  z-index: 100;
   .container {
     .navbar {
       background-color: $primary;
@@ -11,7 +15,7 @@ header {
         background-repeat: no-repeat;
         display: none !important;
         @include from($desktop) {
-          display: block !important;
+          // display: block !important;
         }
       }
       a {
@@ -24,8 +28,11 @@ header {
         width: 63px;
         background-size: contain;
         background-repeat: no-repeat;
+        background-image: url("../images/albion-decorators-logo-mobile.svg");
         @include from($desktop) {
-          display: none !important;
+          // background-image: url("../images/albion-decorators-logo.svg");
+          // width: 80px;
+          height: 60%;
         }
       }
       .navbar-burger {
@@ -63,7 +70,8 @@ header {
         color: white;
         transition: color 0.3s ease-in;
         background-color: transparent;
-        &:hover {
+        &:hover,
+        &[aria-current="page"] {
           color: $secondary;
         }
       }

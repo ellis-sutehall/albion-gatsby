@@ -1,25 +1,25 @@
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import BackgroundImage from "gatsby-background-image"
+// import BackgroundImage from "gatsby-background-image"
 
 const Header = ({ siteTitle }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      LogoMob: imageSharp(id: { eq: "ea72edc3-f5bf-5488-894d-64f2048d4b8e" }) {
-        fixed(width: 35) {
-          ...GatsbyImageSharpFixed
-        }
-        id
-      }
-      imageSharp(id: { eq: "e9e4722e-43b0-5e26-a7f6-f54d983123eb" }) {
-        fixed(width: 150) {
-          ...GatsbyImageSharpFixed
-        }
-        id
-      }
-    }
-  `)
+  // const data = useStaticQuery(graphql`
+  //   query {
+  //     LogoMob: imageSharp(id: { eq: "ea72edc3-f5bf-5488-894d-64f2048d4b8e" }) {
+  //       fixed(width: 35) {
+  //         ...GatsbyImageSharpFixed
+  //       }
+  //       id
+  //     }
+  //     imageSharp(id: { eq: "e9e4722e-43b0-5e26-a7f6-f54d983123eb" }) {
+  //       fixed(width: 150) {
+  //         ...GatsbyImageSharpFixed
+  //       }
+  //       id
+  //     }
+  //   }
+  // `)
 
   const handleOnClick = () => {
     document.body.classList.toggle("menu-is-open")
@@ -38,15 +38,19 @@ const Header = ({ siteTitle }) => {
         <nav className="navbar">
           <div className="navbar-brand">
             <div className="navbar-item">
-              <BackgroundImage
+              <div className="logo">
+                <Link to="/">{siteTitle}</Link>
+              </div>
+              {/* <BackgroundImage
                 className="logo-desktop"
                 fixed={data.imageSharp.fixed}
               >
                 <Link to="/">{siteTitle}</Link>
-              </BackgroundImage>
-              <BackgroundImage className="logo" fixed={data.LogoMob.fixed}>
+              </BackgroundImage> */}
+              {/* <BackgroundImage className="logo" src={LogoMob}>
                 <Link to="/">{siteTitle}</Link>
-              </BackgroundImage>
+              </BackgroundImage> */}
+              {/* <img src={LogoMob} /> */}
             </div>
             <button
               className="navbar-burger burger"
@@ -63,17 +67,40 @@ const Header = ({ siteTitle }) => {
           <div className="navbar-menu">
             <div className="navbar-end">
               <div className="navbar-item">
-                <Link className="navbar-link is-arrowless" onClick={closeMenu}>
+                <Link
+                  className="navbar-link is-arrowless"
+                  to="/"
+                  onClick={closeMenu}
+                >
                   Home
                 </Link>
-                <Link className="navbar-link is-arrowless" onClick={closeMenu}>
+                <a
+                  className="navbar-link is-arrowless"
+                  href="#about"
+                  onClick={closeMenu}
+                >
                   About
+                </a>
+                <Link
+                  className="navbar-link is-arrowless"
+                  to="/contact"
+                  onClick={closeMenu}
+                >
+                  Contact
                 </Link>
-                <Link className="navbar-link is-arrowless" onClick={closeMenu}>
+                <Link
+                  className="navbar-link is-arrowless"
+                  to="/gallery"
+                  onClick={closeMenu}
+                >
                   Gallery
                 </Link>
-                <Link className="navbar-link is-arrowless" onClick={closeMenu}>
-                  Contact
+                <Link
+                  className="navbar-link is-arrowless"
+                  to="/accreditation"
+                  onClick={closeMenu}
+                >
+                  Accreditation
                 </Link>
               </div>
             </div>

@@ -1,0 +1,15 @@
+.accreditation {
+  .columns {
+    &:first-of-type {
+      margin-top: $size-4;
+      margin-bottom: $size-4;
+    }
+  }
+  .pdf {
+    display: flex;
+    .svg-inline--fa {
+      margin-right: $size-6;
+      font-size: $size-4;
+    }
+  }
+}

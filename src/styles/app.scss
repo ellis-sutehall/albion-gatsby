@@ -1,10 +1,16 @@
 @charset 'utf-8';
 
 @import "./variables";
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
 @import "~bulma/bulma.sass";
 @import "./header";
 @import "./hero";
 @import "./home";
+@import "./footer";
+@import "./contact";
+@import "./gallery";
+@import "./accreditation";
 
 body {
   font-family: "Lato", sans-serif;
@@ -17,6 +23,23 @@ body {
 }
 
 main {
+  margin-top: $navbar-height-desktop;
   transition: transform 0.3s ease-in;
   flex-grow: 1;
+}
+
+.title {
+  &.is-1 {
+    font-weight: 300;
+  }
+}
+
+a {
+  color: $secondary;
+}
+
+p {
+  a {
+    font-weight: bold;
+  }
 }

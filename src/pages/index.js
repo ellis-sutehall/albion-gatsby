@@ -5,6 +5,10 @@ import Img from "gatsby-image"
 import BackgroundImage from "gatsby-background-image"
 import SEO from "../components/seo"
 
+import RepairCare from "../images/accreditation/repair-care-accreditation.svg"
+import TrustMark from "../images/accreditation/trustmark-logo-accreditation.svg"
+import BigLogo from "../images/albion-decorators-logo.svg"
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faHome, faBuilding, faChurch } from "@fortawesome/free-solid-svg-icons"
 
@@ -27,9 +31,18 @@ export const data = graphql`
       }
       id
     }
+    dulux: imageSharp(id: { eq: "eafc79b9-a051-56f4-9caa-544dd17642b9" }) {
+      fluid(maxWidth: 505) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+    site {
+      siteMetadata {
+        tel1
+      }
+    }
   }
 `
-
 const IndexPage = ({ data }) => {
   return (
     <Layout>
@@ -45,22 +58,37 @@ const IndexPage = ({ data }) => {
                 <div className="columns">
                   <div className="column has-text-centered">
                     <div className="hero-logo">
-                      <Img fluid={data.bigLogo.fluid} />
+                      {/* <Img
+                        fluid={data.bigLogo.fluid}
+                        alt="Albion Decorators Logo"
+                      /> */}
+                      <img src={BigLogo} alt="Albion Decorators Logo" />
                     </div>
                     <div className="intro">
                       <h4 className="title is-size-5-mobile is-4">
                         {data.site.siteMetadata.description}
                       </h4>
                     </div>
-                    <div className="buttons is-centered">
-                      <Link className="button is-primary" to="/contact">
-                        Email us
-                      </Link>{" "}
-                      <br />
-                      <Link className="button is-primary" to="/contact">
-                        Call us
+                    <div className="buttons is-centered is-hidden-tablet">
+                      <Link
+                        className="button is-primary is-fullwidth"
+                        to="/contact"
+                      >
+                        Email
                       </Link>
+                      <a
+                        className="button is-primary is-fullwidth"
+                        href={`tel:${data.site.siteMetadata.tel1}`}
+                      >
+                        Call
+                      </a>
                     </div>
+                    <Link
+                      to="/contact"
+                      className="button is-primary is-hidden-mobile"
+                    >
+                      Contact Us
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -68,7 +96,7 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
       </BackgroundImage>
-      <section className="section about">
+      <section id="about" className="section about">
         <div className="container">
           <div className="about-info">
             <h2 className="title is-size-3-mobile is-2 has-text-centered-desktop">
@@ -137,6 +165,21 @@ const IndexPage = ({ data }) => {
                 and would be happy to provide recommendations for these
                 services.
               </p>
+            </div>
+          </div>
+          <div className="columns accreditation is-vcentered">
+            <div className="column is-one-third">
+              <Img
+                className="dulux"
+                fluid={data.dulux.fluid}
+                alt="Dulux Select Decorators Logo"
+              />
+            </div>
+            <div className="column is-one-third">
+              <img src={RepairCare} alt="Repair Care Logo" />
+            </div>
+            <div className="column is-one-third">
+              <img src={TrustMark} alt="Trustmark Logo" />
             </div>
           </div>
         </div>

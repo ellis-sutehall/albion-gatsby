@@ -1,0 +1,28 @@
+.footer {
+  background-color: $primary;
+  .footer-logo {
+    margin-top: $size-4;
+    width: 200px;
+    height: 81px;
+    @include mobile {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+.footer,
+.footer .title,
+.footer a {
+  color: white;
+}
+
+.footer p,
+.footer a {
+  text-transform: uppercase;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  line-height: $size-3;
+}
