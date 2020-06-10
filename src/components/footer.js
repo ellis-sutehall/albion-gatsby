@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
@@ -29,7 +30,7 @@ const Footer = () => {
       <div className="container">
         <div className="columns has-text-centered-mobile">
           <div className="column is-one-third">
-            <h2 className="title is-4">Office Address</h2>
+            <h2 className="title is-6">Office Address</h2>
             <p>{data.site.siteMetadata.address_1}</p>
             <p>{data.site.siteMetadata.address_2}</p>
             <p>{data.site.siteMetadata.address_3}</p>
@@ -37,13 +38,15 @@ const Footer = () => {
             <p>{data.site.siteMetadata.vat}</p>
           </div>
           <div className="column is-one-third">
-            <h2 className="title is-4">Pages</h2>
+            <h2 className="title is-6">Pages</h2>
             <ul className="menu">
               <li>
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <a href="/#about">About</a>
+                <AnchorLink to="/#about" className="about">
+                  About
+                </AnchorLink>
               </li>
               <li>
                 <Link to="/contact">Contact</Link>
@@ -57,7 +60,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="column is-one-third">
-            <h2 className="title is-4">General Enquiries</h2>
+            <h2 className="title is-6">General Enquiries</h2>
             <p className="is-hidden-mobile">
               Tel: {data.site.siteMetadata.tel1}
             </p>

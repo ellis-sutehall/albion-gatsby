@@ -1,4 +1,4 @@
-import { Link } from "gatsby"
+import { Link, useEffect } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 // import BackgroundImage from "gatsby-background-image"
@@ -78,9 +78,9 @@ const Header = ({ siteTitle }) => {
                 </Link>
                 <AnchorLink
                   to="/#about"
-                  className="about"
-                  className="navbar-link is-arrowless"
-                  onClick={closeMenu}
+                  className="navbar-link is-arrowless about-link"
+                  // onClick={closeMenu}
+                  stripHash
                 >
                   About
                 </AnchorLink>

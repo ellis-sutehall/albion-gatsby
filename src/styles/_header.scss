@@ -59,9 +59,7 @@ header {
         color: white;
         transition: color 0.3s ease-in;
         background-color: transparent;
-        &:hover,
-        &[aria-current="page"],
-        &.active {
+        &:hover {
           color: $secondary;
         }
       }
