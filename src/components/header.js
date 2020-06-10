@@ -1,28 +1,9 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-// import BackgroundImage from "gatsby-background-image"
-
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 const Header = ({ siteTitle }) => {
-  // const data = useStaticQuery(graphql`
-  //   query {
-  //     LogoMob: imageSharp(id: { eq: "ea72edc3-f5bf-5488-894d-64f2048d4b8e" }) {
-  //       fixed(width: 35) {
-  //         ...GatsbyImageSharpFixed
-  //       }
-  //       id
-  //     }
-  //     imageSharp(id: { eq: "e9e4722e-43b0-5e26-a7f6-f54d983123eb" }) {
-  //       fixed(width: 150) {
-  //         ...GatsbyImageSharpFixed
-  //       }
-  //       id
-  //     }
-  //   }
-  // `)
-
   const handleOnClick = () => {
     document.body.classList.toggle("menu-is-open")
     document.querySelector(".navbar-burger").classList.toggle("is-active")
