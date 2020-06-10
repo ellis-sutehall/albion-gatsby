@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 import React from "react"
 // import BackgroundImage from "gatsby-background-image"
 
+import { AnchorLink } from "gatsby-plugin-anchor-links"
+
 const Header = ({ siteTitle }) => {
   // const data = useStaticQuery(graphql`
   //   query {
@@ -74,13 +76,14 @@ const Header = ({ siteTitle }) => {
                 >
                   Home
                 </Link>
-                <a
+                <AnchorLink
+                  to="/#about"
+                  className="about"
                   className="navbar-link is-arrowless"
-                  href="#about"
                   onClick={closeMenu}
                 >
                   About
-                </a>
+                </AnchorLink>
                 <Link
                   className="navbar-link is-arrowless"
                   to="/contact"

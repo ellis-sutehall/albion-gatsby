@@ -23,9 +23,12 @@ body {
 }
 
 main {
-  margin-top: $navbar-height-desktop;
+  margin-top: $navbar-height;
   transition: transform 0.3s ease-in;
   flex-grow: 1;
+  @include from($desktop) {
+    margin-top: $navbar-height-desktop;
+  }
 }
 
 .title {

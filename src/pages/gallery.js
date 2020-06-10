@@ -41,7 +41,7 @@ const Gallery = () => {
             </h4>
             <Slider {...settings}>
               {images.allImageSharp.edges.map(({ node }, index) => (
-                <div>
+                <div key={index}>
                   <Img fluid={node.fluid} alt="" objectFit="cover" />
                 </div>
               ))}

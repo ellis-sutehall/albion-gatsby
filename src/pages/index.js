@@ -99,9 +99,6 @@ const IndexPage = ({ data }) => {
       <section id="about" className="section about">
         <div className="container">
           <div className="about-info">
-            <h2 className="title is-size-3-mobile is-2 has-text-centered-desktop">
-              About Us
-            </h2>
             <h1 className="title is-size-2-mobile is-1 has-text-centered-desktop">
               Albion Painters &amp; Decorators
             </h1>

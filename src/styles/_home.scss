@@ -40,6 +40,9 @@
     margin-top: $size-4;
     .column {
       padding: $size-4;
+      @include from($desktop) {
+        padding: 0 $size-1;
+      }
     }
     .dulux {
       width: 100%;
