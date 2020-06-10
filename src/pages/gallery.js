@@ -8,13 +8,16 @@ import Img from "gatsby-image"
 const Gallery = () => {
   const images = useStaticQuery(graphql`
     query GalleryQuery {
-      allImageSharp(
-        filter: { fluid: { originalName: { regex: "/gallery/" } } }
+      allFile(
+        filter: { relativeDirectory: { eq: "gallery" } }
+        sort: { order: ASC, fields: relativePath }
       ) {
         edges {
           node {
-            fluid(maxWidth: 1344) {
-              ...GatsbyImageSharpFluid
+            childImageSharp {
+              fluid(maxWidth: 1344) {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
         }
@@ -39,9 +42,13 @@ const Gallery = () => {
               View some examples of our previous work in the gallery below
             </h4>
             <Slider {...settings}>
-              {images.allImageSharp.edges.map(({ node }, index) => (
+              {images.allFile.edges.map(({ node }, index) => (
                 <div key={index}>
-                  <Img fluid={node.fluid} alt="" objectFit="cover" />
+                  <Img
+                    fluid={node.childImageSharp.fluid}
+                    alt=""
+                    objectFit="cover"
+                  />
                 </div>
               ))}
             </Slider>

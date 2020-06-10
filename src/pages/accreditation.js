@@ -15,9 +15,15 @@ import { faFilePdf } from "@fortawesome/free-solid-svg-icons"
 
 export const data = graphql`
   query {
-    imageSharp(id: { eq: "eafc79b9-a051-56f4-9caa-544dd17642b9" }) {
-      fluid(maxWidth: 303) {
-        ...GatsbyImageSharpFluid
+    file(
+      relativePath: {
+        eq: "accreditation/dulux-select-decorators-accreditation.png"
+      }
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 303) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
   }
@@ -40,7 +46,7 @@ const Accreditation = ({ data }) => {
                 <div className="column is-one-third">
                   <Img
                     className="dulux"
-                    fluid={data.imageSharp.fluid}
+                    fluid={data.file.childImageSharp.fluid}
                     alt="Dulux Select Decorators Logo"
                   />
                 </div>

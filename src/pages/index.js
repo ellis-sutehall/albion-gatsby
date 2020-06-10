@@ -19,21 +19,22 @@ export const data = graphql`
         description
       }
     }
-    bigLogo: imageSharp(id: { eq: "e9e4722e-43b0-5e26-a7f6-f54d983123eb" }) {
-      fluid(maxWidth: 534) {
-        ...GatsbyImageSharpFluid
+    hero: file(relativePath: { eq: "albion-decorators-hero.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
       }
-      id
     }
-    hero: imageSharp(id: { eq: "70ec0b1e-5c14-5c20-8b42-0bcbaaceae75" }) {
-      fluid(maxWidth: 1000) {
-        ...GatsbyImageSharpFluid
+    file(
+      relativePath: {
+        eq: "accreditation/dulux-select-decorators-accreditation.png"
       }
-      id
-    }
-    dulux: imageSharp(id: { eq: "eafc79b9-a051-56f4-9caa-544dd17642b9" }) {
-      fluid(maxWidth: 505) {
-        ...GatsbyImageSharpFluid
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 303) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
     site {
@@ -49,7 +50,7 @@ const IndexPage = ({ data }) => {
       <SEO title="Home" />
       <BackgroundImage
         className="hero is-fullheight-with-navbar"
-        fluid={data.hero.fluid}
+        fluid={data.hero.childImageSharp.fluid}
       >
         <div className="hero-body">
           <div className="container">
@@ -58,10 +59,6 @@ const IndexPage = ({ data }) => {
                 <div className="columns">
                   <div className="column has-text-centered">
                     <div className="hero-logo">
-                      {/* <Img
-                        fluid={data.bigLogo.fluid}
-                        alt="Albion Decorators Logo"
-                      /> */}
                       <img src={BigLogo} alt="Albion Decorators Logo" />
                     </div>
                     <div className="intro">
@@ -168,7 +165,7 @@ const IndexPage = ({ data }) => {
             <div className="column is-one-third">
               <Img
                 className="dulux"
-                fluid={data.dulux.fluid}
+                fluid={data.file.childImageSharp.fluid}
                 alt="Dulux Select Decorators Logo"
               />
             </div>
