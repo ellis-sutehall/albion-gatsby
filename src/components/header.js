@@ -43,16 +43,6 @@ const Header = ({ siteTitle }) => {
               <div className="logo">
                 <Link to="/">{siteTitle}</Link>
               </div>
-              {/* <BackgroundImage
-                className="logo-desktop"
-                fixed={data.imageSharp.fixed}
-              >
-                <Link to="/">{siteTitle}</Link>
-              </BackgroundImage> */}
-              {/* <BackgroundImage className="logo" src={LogoMob}>
-                <Link to="/">{siteTitle}</Link>
-              </BackgroundImage> */}
-              {/* <img src={LogoMob} /> */}
             </div>
             <button
               className="navbar-burger burger"
