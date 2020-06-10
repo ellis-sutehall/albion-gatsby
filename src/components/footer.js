@@ -1,7 +1,8 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+// import Img from "gatsby-image"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
+import FooterLogo from "../images/albion-decorators-logo.svg"
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
@@ -77,11 +78,14 @@ const Footer = () => {
                 Tel: {data.site.siteMetadata.tel2}
               </a>
             </p>
-            <Img
+            {/* <Img
               className="footer-logo"
               fixed={data.imageSharp.fixed}
               alt="Albion Decorators Logo"
-            />
+            /> */}
+            <div className="footer-logo">
+              <img src={FooterLogo} alt="Albion Decorators Logo" />
+            </div>
           </div>
         </div>
         <div className="columns has-text-centered-mobile">
