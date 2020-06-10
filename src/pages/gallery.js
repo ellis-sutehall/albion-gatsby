@@ -10,7 +10,6 @@ const Gallery = () => {
     query GalleryQuery {
       allImageSharp(
         filter: { fluid: { originalName: { regex: "/gallery/" } } }
-        sort: { order: ASC, fields: fixed___originalName }
       ) {
         edges {
           node {
