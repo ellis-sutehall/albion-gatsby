@@ -1,19 +1,60 @@
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 const Header = ({ siteTitle }) => {
-  const handleOnClick = () => {
-    document.body.classList.toggle("menu-is-open")
-    document.querySelector(".navbar-burger").classList.toggle("is-active")
-  }
+  // Set state for menu
+  const [menu, setMenu] = useState("")
+  const [burger, setBurger] = useState("")
 
-  const closeMenu = () => {
-    if (document.body.classList.contains("menu-is-open")) {
-      document.body.classList.remove("menu-is-open")
+  // Change state on click
+  useEffect(() => {
+    const burgerEl = document.querySelector(".navbar-burger")
+    const bodyEl = document.body
+    const navLinks = [...document.querySelectorAll(".navbar-menu .navbar-link")]
+
+    const burgerClick = () => {
+      if (
+        bodyEl.classList.contains("menu-is-open") &&
+        burgerEl.classList.contains("is-active")
+      ) {
+        // setMenu("")
+        // setBurger("")
+        // bodyEl.classList.remove("menu-is-open")
+        // burgerEl.classList.remove("is-active")
+        closeMenu()
+      } else {
+        setMenu("menu-is-open")
+        setBurger("is-active")
+        bodyEl.classList.add("menu-is-open")
+        burgerEl.classList.add("is-active")
+      }
     }
-  }
+
+    const closeMenu = () => {
+      if (
+        bodyEl.classList.contains("menu-is-open") &&
+        burgerEl.classList.contains("is-active")
+      ) {
+        setMenu("")
+        setBurger("")
+        bodyEl.classList.remove("menu-is-open")
+        burgerEl.classList.remove("is-active")
+      }
+    }
+    burgerEl.addEventListener("click", burgerClick)
+    for (let i = 0; i < navLinks.length; i++) {
+      navLinks[i].addEventListener("click", closeMenu)
+    }
+
+    return () => {
+      burgerEl.removeEventListener("click", burgerClick)
+      for (let i = 0; i < navLinks.length; i++) {
+        navLinks[i].removeEventListener("click", closeMenu)
+      }
+    }
+  }, [menu, burger])
 
   return (
     <header>
@@ -29,7 +70,6 @@ const Header = ({ siteTitle }) => {
               className="navbar-burger burger"
               aria-label="menu"
               aria-expanded="false"
-              onClick={handleOnClick}
             >
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
@@ -40,40 +80,23 @@ const Header = ({ siteTitle }) => {
           <div className="navbar-menu">
             <div className="navbar-end">
               <div className="navbar-item">
-                <Link
-                  className="navbar-link is-arrowless"
-                  to="/"
-                  onClick={closeMenu}
-                >
+                <Link className="navbar-link is-arrowless" to="/">
                   Home
                 </Link>
                 <AnchorLink
                   to="/#about"
                   className="navbar-link is-arrowless about-link"
-                  // onClick={closeMenu}
                   stripHash
                 >
                   About
                 </AnchorLink>
-                <Link
-                  className="navbar-link is-arrowless"
-                  to="/contact"
-                  onClick={closeMenu}
-                >
+                <Link className="navbar-link is-arrowless" to="/contact">
                   Contact
                 </Link>
-                <Link
-                  className="navbar-link is-arrowless"
-                  to="/gallery"
-                  onClick={closeMenu}
-                >
+                <Link className="navbar-link is-arrowless" to="/gallery">
                   Gallery
                 </Link>
-                <Link
-                  className="navbar-link is-arrowless"
-                  to="/accreditation"
-                  onClick={closeMenu}
-                >
+                <Link className="navbar-link is-arrowless" to="/accreditation">
                   Accreditation
                 </Link>
               </div>
