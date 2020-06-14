@@ -32,7 +32,10 @@ export const data = graphql`
 const Accreditation = ({ data }) => {
   return (
     <Layout>
-      <SEO title="Accreditation" />
+      <SEO
+        title="Accreditation"
+        description="All certificates and accreditation for Albion Decorators"
+      />
       <section className="section accreditation">
         <div className="container">
           <h1 className="title is-1 is-size-2-mobile">Accreditation</h1>

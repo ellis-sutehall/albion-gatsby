@@ -18,9 +18,23 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     "gatsby-plugin-sass",
     {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://wizardly-nightingale-b87b8b.netlify.app/`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         exclude: [`/thank-you`],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://wizardly-nightingale-b87b8b.netlify.app/",
+        sitemap: "https://wizardly-nightingale-b87b8b.netlify.app//sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
       },
     },
     {

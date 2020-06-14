@@ -28,7 +28,10 @@ const Contact = () => {
   `)
   return (
     <Layout>
-      <SEO title="Contact" />
+      <SEO
+        title="Contact"
+        description="Contact form and phone numbers for Albion Decorators"
+      />
       <section className="section">
         <div className="container">
           <h1 className="title is-1 is-size-2-mobile">Contact Us</h1>

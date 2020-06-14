@@ -33,7 +33,10 @@ const Gallery = () => {
   }
   return (
     <Layout>
-      <SEO title="Gallery" />
+      <SEO
+        title="Gallery"
+        description="View some of our work using the gallery"
+      />
       <section className="section">
         <div className="container">
           <div className="slick-gallery">
