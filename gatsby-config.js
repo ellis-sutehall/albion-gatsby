@@ -1,5 +1,7 @@
 module.exports = {
   siteMetadata: {
+    // siteUrl: "https://albiondecorators.co.uk",
+    siteUrl: "https://wizardly-nightingale-b87b8b.netlify.app/",
     title: `Albion Decorators`,
     description: `Located in St Neots Cambridgeshire, Albion Decorators has an expert team with a wide range of specialist skills delivering exceptional internal and external commercial, domestic and restoration decorating services.`,
     author: `Albion Decorators`,
@@ -15,6 +17,12 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     "gatsby-plugin-sass",
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        exclude: [`/thank-you`],
+      },
+    },
     {
       resolve: `gatsby-plugin-gtag`,
       options: {
