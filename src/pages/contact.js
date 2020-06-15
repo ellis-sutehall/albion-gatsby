@@ -80,7 +80,7 @@ const Contact = () => {
                       name="contact"
                       method="POST"
                       action="/thank-you"
-                      netlify
+                      netlify="true"
                       id="contact-form"
                     >
                       <div className="columns is-centered">
