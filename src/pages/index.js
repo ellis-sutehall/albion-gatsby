@@ -113,16 +113,13 @@ const IndexPage = ({ data }) => {
                 <h2 className="title is-size-4-mobile is-3">Domestic</h2>
               </div>
               <p>
-                We are fortunate enough to have a long history of happy and
-                satisfied customers that has resulted in the majority of our
-                domestic work to have come through personal referrals and
-                recommendations. We pride ourselves on our personal and
-                professional approach to ensure that your work is completed to
-                the highest standards with minimal disruption to your daily life
-                - using a Mirka sanding system to keep your house dust-free. We
-                work with a number of local trades and would be happy to provide
-                recommendations for kitchen, bathroom, carpet, electrical and
-                plumbing services.
+                We are delighted that 95% of our domestic work is through
+                referrals and recommendations. We pride ourselves on our
+                personal and professional approach to ensure that your work is
+                completed to the highest standards with minimal disruption to
+                your daily life. We work with a number of local trades and would
+                be happy to provide recommendations for kitchen, bathroom,
+                carpet, electrical, plastering and plumbing services.
               </p>
             </div>
             <div className="column is-one-third">
@@ -131,15 +128,21 @@ const IndexPage = ({ data }) => {
                 <h2 className="title is-size-4-mobile is-3">Commercial</h2>
               </div>
               <p>
-                From office refurbishments to new commercial fit outs as well as
-                retail, education and and health sector projects, we cover all
-                aspects of commercial decoration. For large scale projects we
-                can dramatically cut project time and reduce the impact on your
-                business while keeping the overall finish to an exceptional
-                standard through using specialist spraying techniques. We work
-                with a large number of local building contractors and project
-                consultants and would be happy to provide recommendations for
-                these services.
+                With over 20 years experience in completing renovations, office
+                refurbishments and full commercial fit outs in retail,
+                education, hospitality, high volume student accommodation,
+                leisure and health sector projects, as well as specialist
+                restoration services, the Albion team covers all aspects of
+                commercial decoration.
+              </p>
+              <p>&nbsp;</p>
+              <p>
+                For large scale projects we can dramatically cut project time
+                and reduce the impact on your business while keeping the overall
+                finish to an exceptional standard through using specialist
+                spraying techniques. We work with a large number of local
+                building contractors and project consultants and would be happy
+                to provide recommendations for these services.
               </p>
             </div>
             <div className="column is-one-third">
@@ -148,16 +151,16 @@ const IndexPage = ({ data }) => {
                 <h2 className="title is-size-4-mobile is-3">Restoration</h2>
               </div>
               <p>
-                Using the industry recognised Repair Care system, the Albion
-                Decorators team has successfully completed a number of high
-                profile restoration projects that include some the University of
-                Cambridge colleges, The Fitzwilliam Museum, Grade II listed
-                buildings as well as smaller scale domestic projects requiring
-                improvements for wooden windows, porches and doors as well as
-                sash window repairs and general decoration. We work with a
-                number of local sash window and stain glass specialist companies
-                and would be happy to provide recommendations for these
-                services.
+                Fully trained in the industry recognised Repair Care
+                International system, the Albion Decorators team has
+                successfully completed a number of high profile restoration
+                projects that include University of Cambridge colleges, The
+                Fitzwilliam Museum, Grade II listed buildings as well as smaller
+                scale domestic projects requiring improvements for wooden
+                windows, porches and doors as well as sash window repairs and
+                general decoration. We work with a number of local sash window
+                and stain glass specialist companies and would be happy to
+                provide recommendations for these services.
               </p>
             </div>
           </div>

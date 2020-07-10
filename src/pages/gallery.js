@@ -27,10 +27,25 @@ const Gallery = () => {
   const settings = {
     dots: true,
     infinite: true,
+    autoplay: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    adaptiveHeight: true,
   }
+  const altText = [
+    "Fitzwilliam Museum",
+    "Fitzwilliam Museum",
+    "Fitzwilliam Museum",
+    "Sefton Lodge",
+    "Office refurb",
+    "Staircase wallpaper",
+    "Feature Wallpaper",
+    "Woodwrok",
+    "Shop front",
+    "External - high access",
+    "Garage Doors",
+  ]
   return (
     <Layout>
       <SEO
@@ -46,12 +61,15 @@ const Gallery = () => {
             </h4>
             <Slider {...settings}>
               {images.allFile.edges.map(({ node }, index) => (
-                <div key={index}>
+                <div className="gallery-wrapper" key={index}>
                   <Img
                     fluid={node.childImageSharp.fluid}
-                    alt=""
-                    objectFit="cover"
+                    alt={altText[index]}
+                    objectFit="contain"
                   />
+                  <div className="caption">
+                    <p>{altText[index]}</p>
+                  </div>
                 </div>
               ))}
             </Slider>

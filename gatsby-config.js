@@ -3,7 +3,7 @@ module.exports = {
     // siteUrl: "https://albiondecorators.co.uk",
     siteUrl: "https://wizardly-nightingale-b87b8b.netlify.app/",
     title: `Albion Decorators`,
-    description: `Located in St Neots Cambridgeshire, Albion Decorators has an expert team with a wide range of specialist skills delivering exceptional internal and external commercial, domestic and restoration decorating services.`,
+    description: `An expert team with a wide range of specialist skills delivering exceptional internal and external commercial, domestic and restoration decorating services. Our team is Dulux Select accredited and all members hold a DBS certificate. `,
     author: `Albion Decorators`,
     address_1: "3 FIELDING COURT",
     address_2: "EATON FORD",
