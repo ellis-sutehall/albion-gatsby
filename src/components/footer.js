@@ -100,10 +100,18 @@ const Footer = () => {
               <div className="level-item social-icons">
                 <p>Albion Decorators © {new Date().getFullYear()}</p>
                 <p>
-                  <a href="#" target="_blank" rel="noreferrer">
+                  <a
+                    href="https://www.facebook.com/Albion-Decorators-2118723331673438/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <FontAwesomeIcon icon={faFacebook} />
                   </a>
-                  <a href="#" target="_blank" rel="noreferrer">
+                  <a
+                    href="https://www.instagram.com/albiondecorators/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <FontAwesomeIcon icon={faInstagram} />
                   </a>
                 </p>
