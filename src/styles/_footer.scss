@@ -17,6 +17,14 @@
 .footer {
   padding-bottom: $size-1;
   background-color: $primary;
+  .menu {
+    a {
+      transition: color 0.3s ease-in;
+      &:hover {
+        color: $secondary;
+      }
+    }
+  }
   .footer-logo {
     margin-top: $size-4;
     width: 200px;

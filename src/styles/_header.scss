@@ -59,7 +59,8 @@ header {
         color: white;
         transition: color 0.3s ease-in;
         background-color: transparent;
-        &:hover {
+        &:hover,
+        &.active {
           color: $secondary;
         }
       }

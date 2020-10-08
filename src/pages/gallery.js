@@ -59,20 +59,24 @@ const Gallery = () => {
             <h4 className="title is-5 is-size-6-mobile">
               View some examples of our previous work in the gallery below
             </h4>
-            <Slider {...settings}>
-              {images.allFile.edges.map(({ node }, index) => (
-                <div className="gallery-wrapper" key={index}>
-                  <Img
-                    fluid={node.childImageSharp.fluid}
-                    alt={altText[index]}
-                    objectFit="contain"
-                  />
-                  <div className="caption">
-                    <p>{altText[index]}</p>
-                  </div>
-                </div>
-              ))}
-            </Slider>
+            <div className="columns is-centered">
+              <div className="column is-half">
+                <Slider {...settings}>
+                  {images.allFile.edges.map(({ node }, index) => (
+                    <div className="gallery-wrapper" key={index}>
+                      <Img
+                        fluid={node.childImageSharp.fluid}
+                        alt={altText[index]}
+                        objectFit="contain"
+                      />
+                      <div className="caption">
+                        <p>{altText[index]}</p>
+                      </div>
+                    </div>
+                  ))}
+                </Slider>
+              </div>
+            </div>
           </div>
         </div>
       </section>

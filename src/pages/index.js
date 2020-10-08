@@ -1,9 +1,10 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import Img from "gatsby-image"
 import BackgroundImage from "gatsby-background-image"
 import SEO from "../components/seo"
+import ScrollOut from "scroll-out"
 
 import RepairCare from "../images/accreditation/repair-care-accreditation.svg"
 import TrustMark from "../images/accreditation/trustmark-logo-accreditation.svg"
@@ -45,6 +46,15 @@ export const data = graphql`
   }
 `
 const IndexPage = ({ data }) => {
+  useEffect(() => {
+    ScrollOut({
+      once: true,
+    })
+    return () => {
+      ScrollOut().teardown()
+    }
+  }, [])
+
   return (
     <Layout>
       <SEO title="Home" />
@@ -58,15 +68,18 @@ const IndexPage = ({ data }) => {
               <div className="column is-8">
                 <div className="columns">
                   <div className="column has-text-centered">
-                    <div className="hero-logo">
+                    <div className="hero-logo" data-scroll>
                       <img src={BigLogo} alt="Albion Decorators Logo" />
                     </div>
-                    <div className="intro">
+                    <div className="intro" data-scroll>
                       <h4 className="title is-size-5-mobile is-4">
                         {data.site.siteMetadata.description}
                       </h4>
                     </div>
-                    <div className="buttons is-centered is-hidden-tablet">
+                    <div
+                      className="buttons is-centered is-hidden-tablet"
+                      data-scroll
+                    >
                       <Link
                         className="button is-primary is-fullwidth"
                         to="/contact"
@@ -82,7 +95,8 @@ const IndexPage = ({ data }) => {
                     </div>
                     <Link
                       to="/contact"
-                      className="button is-primary is-hidden-mobile"
+                      className="button contact-btn is-primary is-hidden-mobile"
+                      data-scroll
                     >
                       Contact Us
                     </Link>
@@ -107,7 +121,7 @@ const IndexPage = ({ data }) => {
             </h4>
           </div>
           <div className="columns">
-            <div className="column is-one-third">
+            <div className="column is-one-third" data-scroll>
               <div className="expertise">
                 <FontAwesomeIcon icon={faHome} />
                 <h2 className="title is-size-4-mobile is-3">Domestic</h2>
@@ -122,7 +136,7 @@ const IndexPage = ({ data }) => {
                 carpet, electrical, plastering and plumbing services.
               </p>
             </div>
-            <div className="column is-one-third">
+            <div className="column is-one-third" data-scroll>
               <div className="expertise">
                 <FontAwesomeIcon icon={faBuilding} />
                 <h2 className="title is-size-4-mobile is-3">Commercial</h2>
@@ -145,7 +159,7 @@ const IndexPage = ({ data }) => {
                 to provide recommendations for these services.
               </p>
             </div>
-            <div className="column is-one-third">
+            <div className="column is-one-third" data-scroll>
               <div className="expertise">
                 <FontAwesomeIcon icon={faChurch} />
                 <h2 className="title is-size-4-mobile is-3">Restoration</h2>
@@ -165,17 +179,17 @@ const IndexPage = ({ data }) => {
             </div>
           </div>
           <div className="columns accreditation is-vcentered">
-            <div className="column is-one-third">
+            <div className="column is-one-third" data-scroll>
               <Img
                 className="dulux"
                 fluid={data.file.childImageSharp.fluid}
                 alt="Dulux Select Decorators Logo"
               />
             </div>
-            <div className="column is-one-third">
+            <div className="column is-one-third" data-scroll>
               <img src={RepairCare} alt="Repair Care Logo" />
             </div>
-            <div className="column is-one-third">
+            <div className="column is-one-third" data-scroll>
               <img src={TrustMark} alt="Trustmark Logo" />
             </div>
           </div>

@@ -80,7 +80,11 @@ const Header = ({ siteTitle }) => {
           <div className="navbar-menu">
             <div className="navbar-end">
               <div className="navbar-item">
-                <Link className="navbar-link is-arrowless" to="/">
+                <Link
+                  activeClassName="active"
+                  className="navbar-link is-arrowless"
+                  to="/"
+                >
                   Home
                 </Link>
                 <AnchorLink
@@ -90,13 +94,25 @@ const Header = ({ siteTitle }) => {
                 >
                   About
                 </AnchorLink>
-                <Link className="navbar-link is-arrowless" to="/contact">
+                <Link
+                  activeClassName="active"
+                  className="navbar-link is-arrowless"
+                  to="/contact"
+                >
                   Contact
                 </Link>
-                <Link className="navbar-link is-arrowless" to="/gallery">
+                <Link
+                  activeClassName="active"
+                  className="navbar-link is-arrowless"
+                  to="/gallery"
+                >
                   Gallery
                 </Link>
-                <Link className="navbar-link is-arrowless" to="/accreditation">
+                <Link
+                  activeClassName="active"
+                  className="navbar-link is-arrowless"
+                  to="/accreditation"
+                >
                   Accreditation
                 </Link>
               </div>

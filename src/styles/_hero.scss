@@ -6,6 +6,13 @@
     .hero-logo {
       max-width: 534px;
       margin: 0 auto $size-4 auto;
+      opacity: 0;
+      &[data-scroll] {
+        transition: opacity 1s;
+      }
+      &[data-scroll="in"] {
+        opacity: 1;
+      }
       @include from($tablet) {
         margin-bottom: $size-1;
       }
@@ -23,9 +30,38 @@
         padding: $size-4;
       }
 
+      opacity: 0;
+      &[data-scroll="in"] {
+        opacity: 1;
+      }
+      &[data-scroll] {
+        // transition-delay: 5s;
+        transition: all 1s;
+      }
+
       .title {
         color: white;
         font-weight: normal;
+      }
+    }
+    .buttons {
+      opacity: 0;
+      &[data-scroll="in"] {
+        opacity: 1;
+      }
+      &[data-scroll] {
+        transition-delay: 2s;
+        transition: all 1s;
+      }
+    }
+    .contact-btn {
+      opacity: 0;
+      &[data-scroll="in"] {
+        opacity: 1;
+      }
+      &[data-scroll] {
+        transition-delay: 2s;
+        transition: all 1s;
       }
     }
   }

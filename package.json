@@ -31,6 +31,7 @@
     "react-dom": "^16.12.0",
     "react-helmet": "^6.0.0",
     "react-slick": "^0.26.1",
+    "scroll-out": "^2.2.12",
     "slick-carousel": "^1.8.1",
     "typeface-lato": "0.0.75"
   },
