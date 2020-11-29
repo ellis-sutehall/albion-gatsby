@@ -20,12 +20,6 @@ const Footer = () => {
           vat
         }
       }
-      imageSharp(id: { eq: "e9e4722e-43b0-5e26-a7f6-f54d983123eb" }) {
-        fixed(width: 200) {
-          ...GatsbyImageSharpFixed
-        }
-        id
-      }
     }
   `)
   return (
