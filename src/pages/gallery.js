@@ -33,19 +33,6 @@ const Gallery = () => {
     slidesToScroll: 1,
     adaptiveHeight: true,
   }
-  const altText = [
-    "Fitzwilliam Museum",
-    "Fitzwilliam Museum",
-    "Fitzwilliam Museum",
-    "Sefton Lodge",
-    "Office refurb",
-    "Staircase wallpaper",
-    "Feature Wallpaper",
-    "Woodwrok",
-    "Shop front",
-    "External - high access",
-    "Garage Doors",
-  ]
   return (
     <Layout>
       <SEO
@@ -66,12 +53,9 @@ const Gallery = () => {
                     <div className="gallery-wrapper" key={index}>
                       <Img
                         fluid={node.childImageSharp.fluid}
-                        alt={altText[index]}
+                        alt={`Albion Example Work ${index}`}
                         objectFit="contain"
                       />
-                      <div className="caption">
-                        <p>{altText[index]}</p>
-                      </div>
                     </div>
                   ))}
                 </Slider>

@@ -1,4 +1,19 @@
 .about {
+  .video {
+    height: 100%;
+    @include from($desktop) {
+      margin-bottom: $size-1;
+    }
+
+    iframe {
+      width: 100%;
+      height: auto;
+      min-height: 250px;
+      @include from($desktop) {
+        min-height: 513px;
+      }
+    }
+  }
   .expertise {
     display: flex;
     margin-bottom: $size-6;
@@ -25,7 +40,7 @@
   .about-info {
     margin-bottom: $size-1;
     @include from($desktop) {
-      margin-bottom: $size-1 * 2;
+      margin-bottom: $size-1;
     }
     .title {
       &.is-2 {

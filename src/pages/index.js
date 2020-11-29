@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import Img from "gatsby-image"
 import BackgroundImage from "gatsby-background-image"
 import SEO from "../components/seo"
+import Video from "../components/video"
 import ScrollOut from "scroll-out"
 
 import RepairCare from "../images/accreditation/repair-care-accreditation.svg"
@@ -120,6 +121,17 @@ const IndexPage = ({ data }) => {
               restoration work and fully DBS checked.
             </h4>
           </div>
+          
+          
+          <div className="columns is-centered video">
+            <div className="column is-two-thirds">
+              <Video
+                videoSrcURL="https://drive.google.com/file/d/100322lSQEnrCM6VGRcN1pLhToQp0Mn1J/preview"
+                videoTitle="About Albion"
+              />
+            </div>
+          </div>
+
           <div className="columns">
             <div className="column is-one-third" data-scroll>
               <div className="expertise">

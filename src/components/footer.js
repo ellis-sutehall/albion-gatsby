@@ -119,7 +119,7 @@ const Footer = () => {
             </div>
             <div className="level-right">
               <div className="level-item">
-                <p class="site-credit">
+                <p className="site-credit">
                   Website by{" "}
                   <a
                     href="https://ellissutehall.co.uk"
